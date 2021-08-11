@@ -1,0 +1,75 @@
+.modal {
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+
+    transition: 0.5s;
+    opacity: 0;
+
+}
+
+.active {
+    transition: 0.5s;
+    opacity: 1;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+
+}
+
+.modal_content {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius: 12px;
+}
+.btn{
+    margin-top: 20px;
+    font-size: 15px;
+    margin-left: 17%;
+    border-radius: 8px;
+    font-size: 20px;
+    width: 70%;
+    background: white;
+
+}
+.btn:hover{
+    margin-top: 20px;
+    font-size: 15px;
+    margin-left: 17%;
+    border-radius: 8px;
+    font-size: 20px;
+    width: 70%;
+    background: silver;
+    border:3px solid grey
+
+}
+.close{
+    display: block;
+}
