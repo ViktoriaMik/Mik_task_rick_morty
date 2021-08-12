@@ -11,7 +11,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {loadCharacters, loadFilterCharacters} from "../redux/action-creator/characters-action-creator";
 
 const species = [{species: "Human"}, {species: "Alien"}, {species: "Humanoid"}];
-const status = [{status: "Alive"}, {status: "Dead"}, {status: "Uknown"}];
+const status = [{status: "Alive"}, {status: "Dead"}];
 const gender = [
     {gender: "Male"},
     {gender: "Female"},

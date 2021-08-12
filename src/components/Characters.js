@@ -21,7 +21,7 @@ const Characters = () => {
     }, [currentPage])
     return (
         <div>
-            <Filter/>
+            {/*<Filter/>*/}
 
             <div className={styles.character_container}>
                 {characters.map(character => (

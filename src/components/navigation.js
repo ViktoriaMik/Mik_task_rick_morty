@@ -2,6 +2,8 @@ import React from 'react';
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import Characters from "./Characters";
 import styles from './styles.module.css'
+import CharacterSwitch from "./CharacterSwitch";
+import Filter from "./filter";
 
 const Navigation=()=> {
 
@@ -25,7 +27,9 @@ const Navigation=()=> {
                         </ul>
                     </nav>
                     <Route path="/characters">
-                        <Characters/>
+                        <Filter/>
+                        <CharacterSwitch/>
+                        {/*<Characters/>*/}
                     </Route>
 
                 </Router>
