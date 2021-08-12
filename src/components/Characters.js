@@ -1,8 +1,9 @@
-import React, { useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {loadCharacters, setCurrentPage} from "../redux/action-creator/characters-action-creator";
 import {useDispatch, useSelector} from "react-redux";
 import styles from './styles.module.css'
 import CharacterInfo from "./popup/character-info";
+import Filter from "./filter";
 
 const Characters = () => {
     const dispatch = useDispatch();
@@ -15,17 +16,18 @@ const Characters = () => {
     const characters = useSelector(({characters: {characters}}) => characters)
     console.log(characters)
 
-
     useEffect(() => {
         dispatch(loadCharacters(currentPage))
     }, [currentPage])
     return (
         <div>
+            <Filter/>
+
             <div className={styles.character_container}>
                 {characters.map(character => (
                     <div
                         className={styles.character}
-                        onClick={()=>setModalActive(true)}
+                        onClick={() => setModalActive(true)}
                     >
                         <img className={styles.image} src={character.image}/>
                         <span className={styles.name}>{character.name}</span>
@@ -40,7 +42,7 @@ const Characters = () => {
                             {page}</span>
                 ))}
             </div>
-                <CharacterInfo active={modalActive} setActive={setModalActive}/>
+            {/*<CharacterInfo active={modalActive} setActive={setModalActive}/>*/}
         </div>
     );
 }
