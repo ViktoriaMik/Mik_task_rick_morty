@@ -1,8 +1,8 @@
-.main_content{
+.main_content {
     background: white;
     align-items: center;
     justify-content: center;
-   }
+}
 
 /*characters*/
 .character_container {
@@ -35,11 +35,12 @@
     background: #b0def6;
     border: 1px solid grey;
     font-size: 20px;
-       justify-content: space-between;
+    justify-content: space-between;
     margin: 7px;
 }
-.name{
-    padding-left:17px;
+
+.name {
+    padding-left: 17px;
 }
 
 /*page*/
@@ -74,12 +75,18 @@
     /*position: relative;*/
     flex-wrap: wrap;
 }
-.episode{
+
+.episode {
     border: 1px solid grey;
     justify-content: space-between;
     margin: 7px;
     padding: 4px;
     font-size: 20px;
     align-items: center;
-    border-radius: 20px;}
+    border-radius: 20px;
+}
+.inputHolder{
+    width: 200px;
+   justify-content: right;
+}
 

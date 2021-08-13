@@ -14,7 +14,14 @@ const Episodes = () => {
     const dispatch = useDispatch()
     const episodes = useSelector(({episodes: {episodes}}) => episodes);
     const currentPage = useSelector(({episodes: {currentPage}}) => currentPage)
+
     const [value, setValue] = useState('')
+    const [searchValue, setSearchValue] = useState('');
+
+    let searchEpisode=episodes.filter(episode=>{
+        return episode.name.toLowerCase().includes(searchValue.toLowerCase())
+    })
+
 
 
     const pages = []
@@ -34,11 +41,14 @@ const Episodes = () => {
                     <option value={episode.name}>{episode.name}</option>
                 ))}
             </select>
+            <form className={styles.inputHolder}>
+                <input type='text' placeholder='Search episode' onChange={({target: {value}})=>setSearchValue(value)}/>
+            </form>
             <div className={styles.container_episode}>
                 {!!value ? <EpisodesInfo/> :
 
 
-                    episodes.map(episode => (
+                    searchEpisode.map(episode => (
                         <>
 
                             <div className={styles.episode}>
