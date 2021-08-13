@@ -9,7 +9,7 @@
     display: inline-flex;
     width: 100%;
     box-sizing: border-box;
-    position: relative;
+    /*position: relative;*/
     flex-wrap: wrap;
 }
 

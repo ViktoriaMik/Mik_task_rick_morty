@@ -5,11 +5,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
+      display: flex;
     align-items: center;
     justify-content: center;
     transform: scale(0);
-
     transition: 0.5s;
     opacity: 0;
 
@@ -35,8 +34,8 @@
     padding: 20px;
     border-radius: 12px;
     background-color: white;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     justify-content: center;
     align-items: center;
 

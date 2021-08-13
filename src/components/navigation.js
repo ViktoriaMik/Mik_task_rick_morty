@@ -1,41 +1,48 @@
 import React from 'react';
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
-import Characters from "./Characters";
+import Characters from "./characters/Characters";
 import styles from './styles.module.css'
-import CharacterSwitch from "./CharacterSwitch";
-import Filter from "./filter";
+import CharacterSwitch from "./characters/CharacterSwitch";
+import Filter from "./characters/filter";
+import Episodes from "./episodes/Episodes";
+import EpisodesInfo from "./episodes/EpisodesInfo";
 
-const Navigation=()=> {
+const Navigation = () => {
 
-        return (
-            <div className={styles.main_content}>
-                <Router>
-                    <nav>
-                        <ul>
-                            <li  >
-                                <Link  to="/characters">Characters</Link>
-                            </li>
-                            <li  >
-                                <Link  to="/episodes">Episodes</Link>
-                            </li>
-                            <li  >
-                                <Link  to="/locations">Locations</Link>
-                            </li>
-                            <li  >
-                                <Link  to="/myWatchList">My watch list</Link>
-                            </li>
-                        </ul>
-                    </nav>
-                    <Route path="/characters">
-                        <Filter/>
-                        <CharacterSwitch/>
-                        {/*<Characters/>*/}
-                    </Route>
+    return (
+        <div className={styles.main_content}>
+            <Router>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/characters">Characters</Link>
+                        </li>
+                        <li>
+                            <Link to="/episodes">Episodes</Link>
+                        </li>
+                        <li>
+                            <Link to="/locations">Locations</Link>
+                        </li>
+                        <li>
+                            <Link to="/myWatchList">My watch list</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Route path="/characters">
+                    <Filter/>
+                    <CharacterSwitch/>
+                </Route>
+                <Route path="/episodes" exact>
+                    <Episodes/>
+                </Route>
+                <Route path="/episodes/:name" exact>
+                    <EpisodesInfo/>
+                </Route>
 
-                </Router>
+            </Router>
 
-            </div>
-        );
-    }
+        </div>
+    );
+}
 
 export default Navigation;

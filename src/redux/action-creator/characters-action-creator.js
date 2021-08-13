@@ -9,8 +9,6 @@ import {
 
 
 const setCharacters = (payload) => ({type: SET_CHARACTERS, payload});
-const startLoading = (payload) => ({type: START_CHARACTERS_LOADING, payload});
-const endloading = (payload) => ({type: END_CHARACTERS_LOADING, payload});
 const setCurrentPage = (payload) => ({type: SET_CURRENT_PAGE, payload});
 const setFilterCharacters = (payload) => ({type: SET_FILTER_CHARACTERS, payload});
 const deleteSpeciesCharacters = (payload) => ({type: DELETE_SPECIES_CHARACTERS, payload});
@@ -19,7 +17,6 @@ const deleteGenderCharacters = (payload) => ({type: DELETE_GENDER_CHARACTERS, pa
 
 const loadCharacters = (page) => async (dispatch) => {
     try {
-        dispatch(startLoading())
         const responce = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
         const json = await responce.json()
         console.log(json)
@@ -27,8 +24,6 @@ const loadCharacters = (page) => async (dispatch) => {
 
     } catch (e) {
         console.log(e)
-    } finally {
-        dispatch(endloading())
     }
 }
 const loadFilterCharacters = (type, value, checked) => async (dispatch) => {
@@ -58,8 +53,6 @@ const loadFilterCharacters = (type, value, checked) => async (dispatch) => {
 
 export {
     setCharacters,
-    startLoading,
-    endloading,
     loadCharacters,
     setCurrentPage,
     loadFilterCharacters

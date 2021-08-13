@@ -31,13 +31,7 @@ export const CharactersReducer = (state = initialState, action) => {
         case DELETE_GENDER_CHARACTERS: {
             return {...state, filterCharacter: state.filterCharacter.filter(el=>el.gender !== action.payload)}
         }
-        case START_CHARACTERS_LOADING: {
-            return {...state, isLoading: true}
-        }
-        case END_CHARACTERS_LOADING: {
-            return {...state, isLoading: false}
-        }
-        case SET_CURRENT_PAGE: {
+           case SET_CURRENT_PAGE: {
             return {...state, currentPage: action.payload}
         }
 

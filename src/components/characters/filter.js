@@ -8,7 +8,7 @@ import {
     FormControlLabel,
 } from '@material-ui/core'
 import {useDispatch, useSelector} from "react-redux";
-import {loadCharacters, loadFilterCharacters} from "../redux/action-creator/characters-action-creator";
+import {loadCharacters, loadFilterCharacters} from "../../redux/action-creator/characters-action-creator";
 
 const species = [{species: "Human"}, {species: "Alien"}, {species: "Humanoid"}];
 const status = [{status: "Alive"}, {status: "Dead"}];
