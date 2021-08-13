@@ -1,40 +1,37 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
+import style from '../styles.module.css'
 import {useParams} from "react-router-dom";
-import {BASEurl} from "../../constant/constatnt";
+import {useDispatch, useSelector} from "react-redux";
+import {loadOneEpisodes} from "../../redux/action-creator/episodes-action-creator";
+import SelectedEpisod from "./SelectedEpisod";
 
 const EpisodesInfo = () => {
+    const dispatch = useDispatch();
+    const {name} = useParams();
+    const oneEpisodes = useSelector(({episodes: {oneEpisode}}) => oneEpisode)
 
-    const {name} = useParams()
-    const [episode, setEpisode] = useState({})
-    console.log(episode)
+    const selectEpisodes = useSelector(({episodes: {filterEpisodes}}) => filterEpisodes)
+    console.log(selectEpisodes)
 
-
-    const FetchEpisode = async () => {
-        const responce = await fetch(`${BASEurl}episode/?name=${name}`)
-        const json = await responce.json()
-        console.log(json)
-        setEpisode(json.results)
-    }
     useEffect(() => {
-        FetchEpisode()
-    }, [])
+        dispatch(loadOneEpisodes(name))
+    }, [name])
+
 
     return (
-        <div>
-            {!!episode &&(
-                <>
-                    <h3>{episode[0].episode}</h3>
-                    <p>{episode[0].air_date}</p>
-                    <p>{episode[0].created}</p>
-                    <img src={`https://rickandmortyapi.com/api/character/avatar/${episode[0].id}.jpeg`}/>
-                </>
 
-            )
+        <>{
+            !selectEpisodes ? <SelectedEpisod episod={oneEpisodes}/> :
+                <div>
+                    <div>{selectEpisodes.episode}</div>
+                    <div>{selectEpisodes.name}</div>
+                    <div>{selectEpisodes.air_date}</div>
+                    <img src={`https://rickandmortyapi.com/api/character/avatar/${selectEpisodes.id}.jpeg`}/></div>
+        }
+        </>
 
-                }
-        </div>
     );
-}
+};
 
 
 export default EpisodesInfo;

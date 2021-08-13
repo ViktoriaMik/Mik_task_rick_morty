@@ -3,6 +3,7 @@ import styles from './styles.module.css'
 
 
 const CharacterInfo = ({active, setActive, character}) => {
+
     console.log(active)
     return (
         <div className={active ? styles.active : styles.modal}>
