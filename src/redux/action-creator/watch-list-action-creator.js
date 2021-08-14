@@ -1,11 +1,22 @@
 import {ADD_TO_WATCH_LIST, REMOVE_FROM_WATCH_LIST} from "../action-type/watch-list-action-type";
 
-const addToWatchList=(id)=>({type:ADD_TO_WATCH_LIST,payload:id})
-const removeFromWatchList=(id)=>({type:REMOVE_FROM_WATCH_LIST,payload:id})
+const addToWatchList = (payload) => ({type: ADD_TO_WATCH_LIST, payload})
+const removeFromWatchList = (payload) => ({type: REMOVE_FROM_WATCH_LIST, payload})
 
-const toggleEpisodeInWatchList=(id)=>(dispatch,getState)
+const toggleEpisodeInWatchList = (episode) => (dispatch, getState) => {
+    console.log(getState(), episode)
+    const {watchList: {watchList}} = getState()
 
-export{
+
+    const alreadyExist = watchList.includes(episode);
+    console.log(alreadyExist)
+    dispatch( addToWatchList(episode) )
+    // dispatch(alreadyExist ? removeFromWatchList(episode) : (addToWatchList(episode)))
+
+}
+
+export {
     addToWatchList,
-    removeFromWatchList
+    removeFromWatchList,
+    toggleEpisodeInWatchList
 }

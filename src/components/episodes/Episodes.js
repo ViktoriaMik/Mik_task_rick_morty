@@ -8,6 +8,7 @@ import {Link} from "react-router-dom";
 import styles from "../styles.module.css";
 import SelectedEpisod from "./SelectedEpisod";
 import EpisodesInfo from "./EpisodesInfo";
+import {toggleEpisodeInWatchList} from "../../redux/action-creator/watch-list-action-creator";
 
 
 const Episodes = () => {
@@ -60,6 +61,7 @@ const Episodes = () => {
                                 <Link to={`/episodes/${episode.name}`}>
                                     {episode.name}
                                 </Link>
+                                <button onClick={()=>dispatch(toggleEpisodeInWatchList(episode))}>add</button>
                             </div>
                         </>
                     ))}
