@@ -16,8 +16,7 @@
 .image {
     border-radius: 25px;
     display: block;
-    width: 285px;
-    height: 300px;
+    height: 200px;
 
 }
 
@@ -85,8 +84,29 @@
     align-items: center;
     border-radius: 20px;
 }
-.inputHolder{
-    width: 200px;
-   justify-content: right;
+
+.inputHolder {
+    /*width: 200px;*/
+    margin-bottom: 15px;
+    justify-content: right;
 }
 
+.searchHolder {
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.select {
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 2px solid grey;
+}
+
+/*table-location*/
+
+.table_head {
+    margin-left: 15px;
+    font-size: 15px;
+}

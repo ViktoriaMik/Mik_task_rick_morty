@@ -6,6 +6,7 @@ import CharacterSwitch from "./characters/CharacterSwitch";
 import Filter from "./characters/filter";
 import Episodes from "./episodes/Episodes";
 import EpisodesInfo from "./episodes/EpisodesInfo";
+import Locations from "./Locations";
 
 const Navigation = () => {
 
@@ -37,6 +38,9 @@ const Navigation = () => {
                 </Route>
                 <Route path="/episodes/:name" exact>
                     <EpisodesInfo/>
+                </Route>
+                <Route path="/locations" exact>
+                    <Locations/>
                 </Route>
 
             </Router>

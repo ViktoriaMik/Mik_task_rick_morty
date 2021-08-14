@@ -35,15 +35,17 @@ const Episodes = () => {
 
     return (
         <>
-            <select onChange={({target: {value}}) => setValue(value)}>
-                <option value={'episode'}>Episode</option>
-                {episodes.map(episode => (
-                    <option value={episode.name}>{episode.name}</option>
-                ))}
-            </select>
-            <form className={styles.inputHolder}>
-                <input type='text' placeholder='Search episode' onChange={({target: {value}})=>setSearchValue(value)}/>
-            </form>
+               <div className={styles.searchHolder}>
+                   <select className={styles.select} onChange={({target: {value}}) => setValue(value)}>
+                       <option value={'episode'}>Episode</option>
+                       {episodes.map(episode => (
+                           <option value={episode.name}>{episode.name}</option>
+                       ))}
+                   </select>
+               <form className={styles.inputHolder}>
+                   <input type='text' placeholder='Search episode' onChange={({target: {value}})=>setSearchValue(value)}/>
+               </form>
+           </div>
             <div className={styles.container_episode}>
                 {!!value ? <EpisodesInfo/> :
 
@@ -52,7 +54,7 @@ const Episodes = () => {
                         <>
 
                             <div className={styles.episode}>
-                                <h2>{episode.episode}</h2>
+                                <div>{episode.episode}</div>
                                 <img className={styles.image}
                                      src={`https://rickandmortyapi.com/api/character/avatar/${episode.id}.jpeg`}/>
                                 <Link to={`/episodes/${episode.name}`}>
