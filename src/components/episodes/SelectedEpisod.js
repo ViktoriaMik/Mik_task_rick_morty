@@ -3,7 +3,7 @@ import React from 'react';
 const SelectedEpisod = ({episod}) => {
 
     return (
-        <div>
+        <div key={episod.id}>
             <div>{episod.episode}</div>
             <div>{episod.name}</div>
             <div>{episod.air_date}</div>

@@ -1,8 +1,9 @@
 import {ADD_TO_WATCH_LIST, REMOVE_FROM_WATCH_LIST} from "../action-type/watch-list-action-type";
 
-const initialState = {
-    watchList: [],
 
+const  initForms=localStorage.getItem('watchList')
+const initialState = initForms ? JSON.parse(initForms):{
+    watchList: [],
 }
 
 export const WatchListReducer = (state = initialState, action) => {
