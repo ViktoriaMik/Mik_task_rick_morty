@@ -83,22 +83,27 @@
     font-size: 20px;
     align-items: center;
     border-radius: 20px;
+
 }
 
 .inputHolder {
-    /*width: 200px;*/
+    width: 200px;
     margin-bottom: 15px;
     justify-content: right;
+  font-size: 20px;
 }
 
 .searchHolder {
+    background: #dcebec;
 
-    display: flex;
     justify-content: space-around;
+}
+.searchHolder input{
+    height: 20px;
 }
 
 .select {
-    height: 50px;
+    height: 30px;
     border-radius: 10px;
     font-size: 20px;
     border: 2px solid grey;
@@ -110,3 +115,4 @@
     margin-left: 15px;
     font-size: 15px;
 }
+/*watch-list*/

@@ -5,8 +5,9 @@ import styles from './styles.module.css'
 import CharacterSwitch from "./characters/CharacterSwitch";
 import Filter from "./characters/filter";
 import Episodes from "./episodes/Episodes";
-import EpisodesInfo from "./episodes/EpisodesInfo";
+
 import Locations from "./Locations";
+import MyWatchList from "./My watch list";
 
 const Navigation = () => {
 
@@ -36,11 +37,12 @@ const Navigation = () => {
                 <Route path="/episodes" exact>
                     <Episodes/>
                 </Route>
-                <Route path="/episodes/:name" exact>
-                    <EpisodesInfo/>
-                </Route>
+
                 <Route path="/locations" exact>
                     <Locations/>
+                </Route>
+                <Route path="/myWatchList" exact>
+                    <MyWatchList/>
                 </Route>
 
             </Router>
