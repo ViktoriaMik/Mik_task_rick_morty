@@ -59,7 +59,7 @@ const Episodes = () => {
                                     <div onClick={() => {
                                         console.log(watchList.includes(episode))
                                         dispatch(toggleEpisodeInWatchList(episode))
-                                    }}>{watchList.includes(episode) ?
+                                    }}>{!watchList.includes(episode) ?
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                              fill="currentColor" className="bi bi-bookmark-plus-fill"
                                              viewBox="0 0 16 16">

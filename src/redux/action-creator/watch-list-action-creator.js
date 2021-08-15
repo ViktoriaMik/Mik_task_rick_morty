@@ -9,6 +9,7 @@ const toggleEpisodeInWatchList = (episode) => (dispatch, getState) => {
     const {watchList: {watchList}} = getState()
 
     const alreadyExist = watchList.includes(episode);
+
     alreadyExist ? dispatch(removeFromWatchList(episode.id)) : dispatch(addToWatchList(episode))
 
 

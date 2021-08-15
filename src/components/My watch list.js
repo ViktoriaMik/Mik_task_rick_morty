@@ -22,10 +22,10 @@ const MyWatchList = () => {
                 <div key={episod.id} className={styles.watch_list} style={{ backgroundColor: markAsComplete.includes(episod) ?'#dcebec':''}}>
                     <img  className={styles.list_img}src={`https://rickandmortyapi.com/api/character/avatar/${episod.id}.jpeg`}/>
                    <div>
-                       <div >{episod.episode}</div>
-                       <div>{episod.name}</div>
-                       <div>{episod.air_date}</div>
-                    <button onClick={()=>dispatch(removeFromWatchList(episod.id))}>delete from </button>
+                       <div > {episod.name}</div>
+                       <div >Episode:{episod.episode}</div>
+                       <div>Air date: {episod.air_date}</div>
+                    <button onClick={()=>dispatch(removeFromWatchList(episod.id))}>delete  </button>
                     <button onClick={()=>asCompleted(episod)}>mark as done </button>
                    </div>
                 </div>

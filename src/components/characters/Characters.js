@@ -12,7 +12,7 @@ const Characters = () => {
 
     const currentPage = useSelector(({characters: {currentPage}}) => currentPage)
     const pages = []
-    for(let i=0;i<20;i++)    {
+    for(let i=1;i<21;i++)    {
         pages.push(i)
     }
 
@@ -41,15 +41,16 @@ const Characters = () => {
                     </div>
                 ))}
             </div>
-
             <div className={styles.bottom}>
                 {pages.map(page => (
                     <span
                         onClick={() => dispatch(setCurrentPage(page))}
                         className={currentPage === page ? styles.pages : styles.page}>
                             {page}</span>
+
                 ))}
             </div>
+
         </div>
     );
 }

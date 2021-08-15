@@ -1,0 +1,37 @@
+.main_content {
+    background: white;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.navigation {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    font-size: 20px;
+    text-decoration: none;
+    background: #d9e9f1;
+    font-family: BlinkMacSystemFont;
+    height: 50px;
+    padding-top: 20px
+}
+
+.nav {
+    text-decoration: none;
+    margin-top: 10px;
+
+
+
+}
+
+.nav:hover {
+    font-weight: bold;
+    background: #c6d8e2;
+    width: 200px;
+
+}
+
+/*.navItem:hover{*/
+/*    background: silver;*/
+/*}*/
