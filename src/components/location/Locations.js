@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import {loadLocation, setCurrentPageLocation} from "../redux/action-creator/location-action-creator";
+import {loadLocation, setCurrentPageLocation} from "../../redux/action-creator/location-action-creator";
 import {useDispatch, useSelector} from "react-redux";
-import styles from './styles.module.css'
-import {setCurrentPageEpisodes} from "../redux/action-creator/episodes-action-creator";
+import styles from '../styles.module.css'
+import {setCurrentPageEpisodes} from "../../redux/action-creator/episodes-action-creator";
 
 const Locations = () => {
     const dispatch = useDispatch();

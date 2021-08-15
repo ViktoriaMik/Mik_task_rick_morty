@@ -1,7 +1,7 @@
 import React, {Component, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {removeFromWatchList} from "../redux/action-creator/watch-list-action-creator";
-import styles from './styles.module.css'
+import {removeFromWatchList} from "../../redux/action-creator/watch-list-action-creator";
+import styles from '../styles.module.css'
 
 const MyWatchList = () => {
     const dispatch=useDispatch();

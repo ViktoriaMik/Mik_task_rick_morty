@@ -3,8 +3,8 @@ import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import CharacterSwitch from "../characters/CharacterSwitch";
 import Filter from "../characters/filter";
 import Episodes from "../episodes/Episodes";
-import Locations from "../Locations";
-import MyWatchList from "../My watch list";
+import Locations from "../location/Locations";
+import MyWatchList from "../myWatchList/My watch list";
 import styles from './styles.module.css'
 
 
